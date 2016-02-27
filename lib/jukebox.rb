@@ -40,16 +40,19 @@ end
 
 def run(songs)
   help
-  puts "Please enter a command:"
-  command = gets.chomp
-  case command
-  when "help"
-    help
-  when "list"
-    list(songs)
-  when "play"
-    play(songs)
-  else
-    exit_jukebox
+  loop do
+    puts "Please enter a command:"
+    command = gets.chomp
+    case command
+    when "help"
+      help
+    when "list"
+      list(songs)
+    when "play"
+      play(songs)
+    else
+      exit_jukebox
+      break
+    end
   end
 end
